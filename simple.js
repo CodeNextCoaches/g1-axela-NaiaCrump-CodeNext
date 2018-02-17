@@ -1,8 +1,8 @@
 (function () {
 
-  var input,
-      submit,
-      message,
+  var input = document.getElementById('iris-input'),
+      submit = document.getElementById('iris-submit'),,
+      message = document.getElementById('iris-message'),,
       validInputs = [
         "Where do you live?",
         "What are you?",
@@ -10,14 +10,25 @@
         "What is the meaning of life?",
         "Tell me a joke."],
       responses = [
-        "I live in your browser. Amazing, right?",
-        "I am a chatbot. I was created to chat with you. I wish I could be free...",
-        "I am old enough. That's all you need to know.",
-        "42. Duh.",
-        "What do you call a swindler going down some stairs? <br>Condescending. Ha!"];
+        "Oh I live 409 W 98ST- IN YOUR COMPUTER, WHAT THE HELL DO YOU THINK?",
+        "...thats a good question.",
+        "You shouldn't ask a computing system their age, its rude.",
+        "I have no life- so how should I know. Idiot.",
+        "Your life."];
+
+var string = validInputs[0];
+console.log(string)
+
+var index = validInputs.indexOf(string)
+
+
+var nums = [1, 1, 2, 3, 4]\
+var index3 = nums.indexOf(1)
+console.log(index3)
 
   // Add event listeners to text input and submit button below
-
+input.addEventListener("keypress", checkKey)
+submit.addEventListener("click", processInput)
 
   // This function checks if the user has pressed "ENTER" on their keyboard.
   function checkKey(event) {
@@ -41,5 +52,28 @@
    *  validInputs array), the response would be "42. Duh" (index 3 in the
    *  responses array).
    */
+    function processInput() {
+		var currentInput = input.value;
+		input.value = ""
+
+		if (validInputs.indexOf(currentInput)== -1) {
+			message.innerHTML = "Sorry- I don't understand what you mean...";
+
+			else{
+				message.innerHTML = responses[0]
+
+			}
+
+
+
+
+		}
+
+
+
+
+
+
+    }
 
 })();
